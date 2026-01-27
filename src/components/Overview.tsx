@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import photo from "../../public/body_photo.webp";
+import photo from "../assets/body_photo.webp";
 import { motion, useScroll, useTransform } from "motion/react";
 
 const Overview = () => {
@@ -11,7 +11,7 @@ const Overview = () => {
   });
 
   const x = useTransform(scrollYProgress, [0, 1], ["-100", "100%"]);
-  const y = useTransform(scrollYProgress, [0, 1], ["-100", "100%"]);
+
   return (
     <div
       ref={ref}

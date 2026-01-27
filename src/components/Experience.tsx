@@ -49,13 +49,6 @@ const datas = [
 const Experience = () => {
   const targetContainer = useRef(null);
 
-  const { scrollYProgress } = useScroll({
-    target: targetContainer,
-    offset: ["start start", "end end"],
-  });
-
-  const scaleY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-
   return (
     <div className="min-h-[200vh] flex flex-col py-30 px-30 font-space-grotesk font-light bg-neutral-900 -z-10">
       <div ref={targetContainer} className="pb-40">

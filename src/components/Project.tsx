@@ -120,7 +120,7 @@ interface SectionProps {
   index: number;
 }
 
-const Section = ({ className, style, index }: SectionProps) => {
+const Section = ({ className, style }: SectionProps) => {
   const ref = useRef(null);
 
   return (

@@ -1,5 +1,5 @@
-import { animate, motion, useScroll, useTransform } from "motion/react";
-import profile from "../../public/my_photo.png";
+import { motion, useScroll, useTransform } from "motion/react";
+import profile from "../assets/my_photo.png";
 import { useRef } from "react";
 
 const Playground = () => {
@@ -14,7 +14,10 @@ const Playground = () => {
   const imgY = useTransform(scrollYProgress, [0, 1], ["50%", "-50%"]);
   return (
     <div>
-      <div ref={ref} className="grid place-items-center w-full h-screen relative">
+      <div
+        ref={ref}
+        className="grid place-items-center w-full h-screen relative"
+      >
         <div className="flex gap-10 justify-center items-center">
           <motion.div
             style={{
