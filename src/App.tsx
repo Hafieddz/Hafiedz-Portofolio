@@ -12,7 +12,6 @@ function App() {
       </div>
       <Experience />
       <Project />
-      <div className="h-[300vh] bg-neutral-200"></div>
     </div>
   );
 }

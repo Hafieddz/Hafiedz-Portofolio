@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import profile from "../assets/my_photo.png";
+import profile from "../assets/my_photo.webp";
 import { motion, useScroll, useTransform } from "motion/react";
 
 const Hero = () => {

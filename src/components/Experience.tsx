@@ -77,7 +77,7 @@ interface JourneyCardProps {
 const JourneyCard = ({ data }: JourneyCardProps) => {
   return (
     <div
-      className={`w-130 h-80 bg-neutral-900 rounded-lg border border-neutral-300 shadow-2xl shadow-neutral-500 font-google-sans`}
+      className={`w-130 min-h-60 bg-neutral-900 rounded-lg border border-neutral-300 shadow-2xl shadow-neutral-500 font-google-sans`}
     >
       <div className="py-5 border-b px-5">
         <p className="text-lg font-semibold"> {data.title} </p>
@@ -87,7 +87,7 @@ const JourneyCard = ({ data }: JourneyCardProps) => {
           <MapPin size={14} strokeWidth={1.5} />
           {data.location}
         </p>
-        <div className="flex flex-col gap-2 mt-3">
+        <div className="flex flex-col gap-2 mt-3 pb-10">
           <p className="text-sm leading-6">{data.description}</p>
         </div>
       </div>
@@ -136,9 +136,23 @@ const JourneyCardWrapper = ({ data, index }: JourneyCardWrapperProps) => {
     >
       {/* left */}
       {index % 2 === 0 ? (
-        <div className="py-20 z-20 ">
+        <motion.div
+          initial={{
+            x: -100,
+            y: -20,
+          }}
+          whileInView={{
+            x: 0,
+            y: 0,
+          }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.8,
+          }}
+          className="py-10 z-20 "
+        >
           <JourneyCard data={data} />
-        </div>
+        </motion.div>
       ) : (
         <div className="w-130">
           <p className="text-end text-xl">{data.date}</p>
@@ -146,8 +160,8 @@ const JourneyCardWrapper = ({ data, index }: JourneyCardWrapperProps) => {
       )}
 
       {/* center */}
-      <div className="h-150 flex items-center relative mx-20">
-        <div className="h-full bg-white w-0.5 rounded-full relative overflow-hidden">
+      <div className="h-100 flex items-center relative mx-20">
+        <div className="h-full w-0.5 rounded-full relative overflow-hidden">
           <motion.div
             style={{
               scaleY,
@@ -155,7 +169,7 @@ const JourneyCardWrapper = ({ data, index }: JourneyCardWrapperProps) => {
             className="bg-violet-900 origin-top w-full h-full"
           />
         </div>
-        <div className="w-3 h-3 bg-white rounded-full absolute -left-[4.5px] overflow-hidden">
+        <div className="w-3 h-3 rounded-full absolute -left-[4.5px] overflow-hidden">
           <motion.div
             style={{
               scaleY: dotScaleY,
@@ -170,22 +184,24 @@ const JourneyCardWrapper = ({ data, index }: JourneyCardWrapperProps) => {
           <p className="text-start text-xl">{data.date}</p>
         </div>
       ) : (
-        <div className="py-20 z-20">
+        <motion.div
+          initial={{
+            x: 100,
+            y: 20,
+          }}
+          whileInView={{
+            x: 0,
+            y: 0,
+          }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.8,
+          }}
+          className="py-10 z-20 "
+        >
           <JourneyCard data={data} />
-        </div>
+        </motion.div>
       )}
-      <motion.div
-        variants={imageVariants}
-        initial="hidden"
-        whileInView="visible"
-        className="absolute left-0 top-0 bg-white w-100 h-60 rounded-lg -rotate-3 z-10 opacity-50"
-      />
-      <motion.div
-        variants={imageVariants}
-        initial="hidden"
-        whileInView="visible"
-        className="absolute right-0 bottom-0 bg-white w-100 h-60 rounded-lg rotate-6 z-10 opacity-50"
-      />
     </div>
   );
 };
