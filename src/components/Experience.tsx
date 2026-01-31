@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { motion, useScroll, useTransform, type Variants } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 import { MapPin } from "lucide-react";
 
 const datas = [
@@ -113,21 +113,6 @@ const JourneyCardWrapper = ({ data, index }: JourneyCardWrapperProps) => {
     [0.49083333333333334, 0.5125],
     [0, 1],
   );
-
-  const imageVariants: Variants = {
-    hidden: {
-      opacity: 0,
-      y: -100,
-    },
-    visible: {
-      opacity: 0.5,
-      y: 0,
-      transition: {
-        duration: 0.7,
-        bounce: 1,
-      },
-    },
-  };
 
   return (
     <div
