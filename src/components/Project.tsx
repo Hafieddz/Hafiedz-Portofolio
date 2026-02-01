@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import { project_data, type project_data_type } from "../utils/project-data.ts";
 import { ChevronLeft } from "lucide-react";
 import Footer from "./Footer.tsx";
+import ProjectMobile from "./MobileViewport/ProjectMobile.tsx";
 
 const Project = () => {
   const container = useRef(null);
@@ -42,59 +43,62 @@ const Project = () => {
     ],
   );
   return (
-    <div ref={container} className="relative font-space-grotesk">
-      <div className="grid grid-cols-2 relative">
-        {/* Left */}
-        <div className="bg-neutral-900 h-screen sticky top-0 pt-10 ">
-          <div className="relative h-full w-full flex flex-col items-center gap-5">
-            <p className="text-9xl font-fjalla-one"> PROJECT </p>
-            <p className="font-light">
-              My Projects in Web Development so far :
-            </p>
-            <div className="absolute bottom-0 right-20 text-[300px] p-0 m-0 overflow-hidden ">
-              <div className="flex gap-5 opacity-30 text-transparent [-webkit-text-stroke:4px_white]">
-                <p className="w-47.5">0</p>
-                <div className="w-47 relative">
-                  <motion.div
-                    className="absolute"
-                    style={{
-                      top: y,
-                    }}
-                  >
-                    {project_data.map((_, idx) => (
-                      <p key={`pn_${idx}`}>{idx + 1}</p>
-                    ))}
-                  </motion.div>
+    <>
+      <div ref={container} className="hidden md:block relative font-space-grotesk">
+        <div className="grid grid-cols-2 relative">
+          {/* Left */}
+          <div className="bg-neutral-900 h-screen sticky top-0 pt-10 ">
+            <div className="relative h-full w-full flex flex-col items-center gap-5">
+              <p className="text-9xl font-fjalla-one"> PROJECT </p>
+              <p className="font-light">
+                My Projects in Web Development so far :
+              </p>
+              <div className="absolute bottom-0 right-20 text-[300px] p-0 m-0 overflow-hidden ">
+                <div className="flex gap-5 opacity-30 text-transparent [-webkit-text-stroke:4px_white]">
+                  <p className="w-47.5">0</p>
+                  <div className="w-47 relative">
+                    <motion.div
+                      className="absolute"
+                      style={{
+                        top: y,
+                      }}
+                    >
+                      {project_data.map((_, idx) => (
+                        <p key={`pn_${idx}`}>{idx + 1}</p>
+                      ))}
+                    </motion.div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        {/* Right */}
-        <div className="bg-neutral-900 sticky top-0">
-          {project_data.map((data: project_data_type, idx: number) => (
+          {/* Right */}
+          <div className="bg-neutral-900 sticky top-0">
+            {project_data.map((data: project_data_type, idx: number) => (
+              <Section
+                key={`pp_${idx}`}
+                projectData={data}
+                index={idx + 1}
+                className={`${data.background}`}
+                style={{
+                  top: data.top,
+                }}
+              />
+            ))}
+            {/* Dummy Section */}
             <Section
-              key={`pp_${idx}`}
-              projectData={data}
-              index={idx + 1}
-              className={`${data.background}`}
+              index={99}
+              className="bg-blue-500 opacity-0"
               style={{
-                top: data.top,
+                top: "00px",
               }}
             />
-          ))}
-          {/* Dummy Section */}
-          <Section
-            index={99}
-            className="bg-blue-500 opacity-0"
-            style={{
-              top: "00px",
-            }}
-          />
+          </div>
+          <Footer />
         </div>
-        <Footer />
       </div>
-    </div>
+      <ProjectMobile />
+    </>
   );
 };
 

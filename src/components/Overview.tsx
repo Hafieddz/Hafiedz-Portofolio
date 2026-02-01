@@ -15,7 +15,8 @@ const Overview = () => {
   return (
     <div
       ref={ref}
-      className="flex justify-center items-center z-20  bg-neutral-200 text-black py-30 w-full font-space-grotesk gap-30 relative "
+      id="overview"
+      className="flex flex-col md:flex-row justify-center items-center z-20 bg-neutral-200 text-black  py-10 lg:py-30 w-full font-space-grotesk gap-15 lg:gap-30 relative "
     >
       <motion.div
         initial={{
@@ -32,10 +33,10 @@ const Overview = () => {
           repeat: 0,
           ease: "easeInOut",
         }}
-        className="w-70 h-fit rounded-full relative z-50"
+        className="w-35 md:w-70 h-fit rounded-full relative z-50"
       >
         <img src={photo} alt="" className="object-cover z-50" />
-        <div className="w-100 h-100 absolute -bottom-10 -left-15 rounded-full bg-black -z-10 shadow-2xl shadow-black" />
+        <div className="w-65 h-70 md:w-100 md:h-100 absolute -bottom-10 -left-15 rounded-full bg-black -z-10 shadow-2xl shadow-black" />
       </motion.div>
       <motion.div
         initial={{
@@ -52,10 +53,10 @@ const Overview = () => {
           repeat: 0,
           ease: "easeInOut",
         }}
-        className="flex flex-col gap-5 w-[30%] "
+        className="flex flex-col gap-4 px-5  md:w-[30%] "
       >
-        <p className="text-4xl font-semibold"> About Me </p>
-        <p>
+        <p className="text-2xl md:text-4xl font-semibold"> About Me </p>
+        <p className="text-sm md:text-base">
           {" "}
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur
           reiciendis nostrum alias voluptate natus quis, amet, sit provident
@@ -75,7 +76,7 @@ const Overview = () => {
         style={{
           x,
         }}
-        className="text-[600px] absolute -z-50 font-light opacity-40 text-transparent [-webkit-text-stroke:3px_black] "
+        className="text-[400px] md:text-[600px] absolute -z-50 font-light opacity-40 text-transparent [-webkit-text-stroke:3px_black] "
       >
         ABOUT
       </motion.p>

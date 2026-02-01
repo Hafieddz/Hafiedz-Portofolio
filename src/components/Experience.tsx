@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
-import { MapPin } from "lucide-react";
+import { Calendar, MapPin } from "lucide-react";
 
 const datas = [
   {
@@ -50,10 +50,16 @@ const Experience = () => {
   const targetContainer = useRef(null);
 
   return (
-    <div className="min-h-[200vh] flex flex-col py-30 px-30 font-space-grotesk font-light bg-neutral-900 -z-10">
+    <div
+      id="journey"
+      className="min-h-[200vh] flex flex-col py-10 px-3 md:py-30 md:px-30 font-space-grotesk font-light bg-neutral-900 -z-10 overflow-hidden"
+    >
       <div ref={targetContainer} className="pb-40">
-        <p className="text-8xl font-fjalla-one"> MY JOURNEY </p>
-        <div className="flex flex-col mt-20">
+        <p className="text-6xl text-center md:text-5xl lg:text-8xl md:text-start font-fjalla-one">
+          {" "}
+          MY JOURNEY{" "}
+        </p>
+        <div className="flex flex-col mt-5 md:mt-20">
           {datas.map((data, i) => (
             <JourneyCardWrapper key={`jcw_${i}`} data={data} index={i} />
           ))}
@@ -77,13 +83,17 @@ interface JourneyCardProps {
 const JourneyCard = ({ data }: JourneyCardProps) => {
   return (
     <div
-      className={`w-130 min-h-60 bg-neutral-900 rounded-lg border border-neutral-300 shadow-2xl shadow-neutral-500 font-google-sans`}
+      className={`w-full md:w-130 min-h-60 bg-neutral-900 rounded-lg border border-neutral-300 shadow-2xl shadow-neutral-500 font-google-sans`}
     >
       <div className="py-5 border-b px-5">
         <p className="text-lg font-semibold"> {data.title} </p>
       </div>
       <div className="p-3 font-normal mt-2">
-        <p className="flex gap-2 items-center text-sm">
+        <p className="flex gap-2 items-center text-sm md:hidden">
+          <Calendar size={14} strokeWidth={1.5} />
+          {data.date}
+        </p>
+        <p className="flex gap-2 items-center text-sm mt-3 md:mt-0">
           <MapPin size={14} strokeWidth={1.5} />
           {data.location}
         </p>
@@ -117,7 +127,7 @@ const JourneyCardWrapper = ({ data, index }: JourneyCardWrapperProps) => {
   return (
     <div
       ref={container}
-      className="flex items-center px-10 h-full justify-center relative"
+      className="md:flex items-center px-2 md:px-10 h-full justify-center relative"
     >
       {/* left */}
       {index % 2 === 0 ? (
@@ -134,18 +144,18 @@ const JourneyCardWrapper = ({ data, index }: JourneyCardWrapperProps) => {
           transition={{
             duration: 0.8,
           }}
-          className="py-10 z-20 "
+          className="py-3 md:py-10 z-20 "
         >
           <JourneyCard data={data} />
         </motion.div>
       ) : (
-        <div className="w-130">
+        <div className="hidden md:block w-130">
           <p className="text-end text-xl">{data.date}</p>
         </div>
       )}
 
       {/* center */}
-      <div className="h-100 flex items-center relative mx-20">
+      <div className="h-100 items-center relative mx-20 hidden md:flex md:visible">
         <div className="h-full w-0.5 rounded-full relative overflow-hidden">
           <motion.div
             style={{
@@ -165,7 +175,7 @@ const JourneyCardWrapper = ({ data, index }: JourneyCardWrapperProps) => {
       </div>
       {/* right */}
       {index % 2 === 0 ? (
-        <div className="w-130">
+        <div className="hidden md:block w-130">
           <p className="text-start text-xl">{data.date}</p>
         </div>
       ) : (

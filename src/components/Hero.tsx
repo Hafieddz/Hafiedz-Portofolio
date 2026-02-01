@@ -38,7 +38,7 @@ const Hero = () => {
             ease: "easeInOut",
             bounce: 0.8,
           }}
-          className="w-50 h-50 relative"
+          className="w-40 h-40 md:w-25 md:h-25  lg:w-50 lg:h-50 relative"
         >
           <div className="w-full h-full overflow-hidden bg-white rounded-full">
             <motion.img
@@ -47,7 +47,7 @@ const Hero = () => {
               className="object-cover"
             />
           </div>
-          <div className="w-50 h-50 absolute inset-0 bg-white blur-md -z-50 rounded-full"></div>
+          {/* <div className="w-50 h-50 absolute inset-0 bg-white blur-md -z-50 rounded-full"></div> */}
         </motion.div>
         <motion.p
           initial={{
@@ -63,7 +63,7 @@ const Hero = () => {
             ease: "easeInOut",
             bounce: 0.8,
           }}
-          className="text-4xl w-[65%] text-center leading-12 text-neutral-400"
+          className="text-xl lg:text-4xl w-[65%] text-center lg:leading-12 text-neutral-400"
         >
           I'm
           <span className="ps-1.5 text-white">Hafiedz</span>, Fresh Graduate

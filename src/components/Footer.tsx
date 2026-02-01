@@ -1,4 +1,5 @@
 import {
+  LayoutGroup,
   motion,
   useMotionValueEvent,
   useScroll,
@@ -6,6 +7,11 @@ import {
 } from "motion/react";
 import LightRays from "./LightRays";
 import { useRef } from "react";
+
+import Instagram from "./svgs/Instagram";
+import Github from "./svgs/Github";
+import Linkedin from "./svgs/Linkedin";
+import Gmail from "./svgs/Gmail";
 
 const Footer = () => {
   const container = useRef(null);
@@ -50,12 +56,46 @@ const Footer = () => {
           saturation={1}
         />
         <div className="absolute top-1/2 -translate-1/2 left-1/2 ">
-          <p className="text-7xl">Get in touch</p>
+          <p className="text-4xl md:text-7xl">Get in touch</p>
           <div className="flex gap-3 mt-5 justify-center items-center">
-            <p> Instagram</p>
-            <p> LinkedIn</p>
-            <p> Github</p>
-            <p> Gmail</p>
+            <LayoutGroup>
+              <motion.div
+                layout
+                whileHover={{
+                  scale: 1.2,
+                }}
+                className="w-10 h-10 cursor-pointer"
+              >
+                <Instagram />
+              </motion.div>
+              <motion.div
+                layout
+                whileHover={{
+                  scale: 1.2,
+                }}
+                className="w-8 h-10 cursor-pointer flex items-center justify-center"
+              >
+                <Github />
+              </motion.div>
+              <motion.div
+                layout
+                whileHover={{
+                  scale: 1.2,
+                }}
+                className="w-8 h-10 cursor-pointer flex items-center justify-center"
+              >
+                <Linkedin />
+              </motion.div>
+              <motion.div
+                layout
+                whileHover={{
+                  scale: 1.2,
+                }}
+                className="w-10 h-10 cursor-pointer flex items-center justify-center"
+              >
+                <Gmail />
+              </motion.div>
+            </LayoutGroup>
           </div>
         </div>
       </motion.div>
