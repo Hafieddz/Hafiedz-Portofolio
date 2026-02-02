@@ -13,7 +13,7 @@ const PreviewProject = ({ name, imgSrc }: PreviewProjectProps) => {
   console.log(name, imgSrc);
 
   return (
-    <div className="absolute bottom-3 w-[97%] h-[8%] left-1/2 -translate-x-1/2 rounded-t-lg z-10">
+    <div className="absolute bottom-3 sm:bottom-30 md:bottom-40 w-[97%] h-[8%] left-1/2 -translate-x-1/2 rounded-t-lg z-10">
       <motion.div
         animate={{
           top: isOpen ? "-175px" : "0px",

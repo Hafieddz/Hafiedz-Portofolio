@@ -16,7 +16,7 @@ const Overview = () => {
     <div
       ref={ref}
       id="overview"
-      className="flex flex-col md:flex-row justify-center items-center z-20 bg-neutral-200 text-black  py-10 lg:py-30 w-full font-space-grotesk gap-15 lg:gap-30 relative "
+      className="flex flex-col xl:flex-row justify-center items-center z-20 bg-neutral-200 text-black  py-10 lg:py-30 w-full font-space-grotesk gap-15 lg:gap-30 relative "
     >
       <motion.div
         initial={{
@@ -53,7 +53,7 @@ const Overview = () => {
           repeat: 0,
           ease: "easeInOut",
         }}
-        className="flex flex-col gap-4 px-5  md:w-[30%] "
+        className="flex flex-col gap-4 px-5  xl:w-[30%] "
       >
         <p className="text-2xl md:text-4xl font-semibold"> About Me </p>
         <p className="text-sm md:text-base">

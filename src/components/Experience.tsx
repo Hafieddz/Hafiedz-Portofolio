@@ -52,10 +52,10 @@ const Experience = () => {
   return (
     <div
       id="journey"
-      className="min-h-[200vh] flex flex-col py-10 px-3 md:py-30 md:px-30 font-space-grotesk font-light bg-neutral-900 -z-10 overflow-hidden"
+      className="flex flex-col py-10 px-3 xl:py-30 md:px-3 2xl:px-20 font-space-grotesk font-light bg-neutral-900 -z-10 overflow-hidden"
     >
-      <div ref={targetContainer} className="pb-40">
-        <p className="text-6xl text-center md:text-5xl lg:text-8xl md:text-start font-fjalla-one">
+      <div ref={targetContainer} className=" pb-5 xl:pb-40">
+        <p className="text-6xl text-center md:text-5xl lg:text-8xl md:text-start font-fjalla-one px-10">
           {" "}
           MY JOURNEY{" "}
         </p>
@@ -89,11 +89,11 @@ const JourneyCard = ({ data }: JourneyCardProps) => {
         <p className="text-lg font-semibold"> {data.title} </p>
       </div>
       <div className="p-3 font-normal mt-2">
-        <p className="flex gap-2 items-center text-sm md:hidden">
+        <p className="flex gap-2 items-center text-sm 2xl:hidden">
           <Calendar size={14} strokeWidth={1.5} />
           {data.date}
         </p>
-        <p className="flex gap-2 items-center text-sm mt-3 md:mt-0">
+        <p className="flex gap-2 items-center text-sm mt-3 2xl:mt-0">
           <MapPin size={14} strokeWidth={1.5} />
           {data.location}
         </p>
@@ -150,7 +150,24 @@ const JourneyCardWrapper = ({ data, index }: JourneyCardWrapperProps) => {
         </motion.div>
       ) : (
         <div className="hidden md:block w-130">
-          <p className="text-end text-xl">{data.date}</p>
+          <p className="text-end text-xl hidden 2xl:block">{data.date}</p>
+          <motion.div
+            initial={{
+              x: -100,
+              y: -20,
+            }}
+            whileInView={{
+              x: 0,
+              y: 0,
+            }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.8,
+            }}
+            className="py-3 md:py-10 z-20 block 2xl:hidden "
+          >
+            <JourneyCard data={data} />
+          </motion.div>
         </div>
       )}
 
@@ -175,7 +192,7 @@ const JourneyCardWrapper = ({ data, index }: JourneyCardWrapperProps) => {
       </div>
       {/* right */}
       {index % 2 === 0 ? (
-        <div className="hidden md:block w-130">
+        <div className="hidden 2xl:block w-130">
           <p className="text-start text-xl">{data.date}</p>
         </div>
       ) : (
@@ -192,7 +209,7 @@ const JourneyCardWrapper = ({ data, index }: JourneyCardWrapperProps) => {
           transition={{
             duration: 0.8,
           }}
-          className="py-10 z-20 "
+          className="py-10 z-20 2xl:block hidden "
         >
           <JourneyCard data={data} />
         </motion.div>

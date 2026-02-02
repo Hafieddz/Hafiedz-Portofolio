@@ -44,7 +44,7 @@ const Project = () => {
   );
   return (
     <>
-      <div ref={container} className="hidden md:block relative font-space-grotesk">
+      <div ref={container} className="hidden xl:block relative font-space-grotesk">
         <div className="grid grid-cols-2 relative">
           {/* Left */}
           <div className="bg-neutral-900 h-screen sticky top-0 pt-10 ">

@@ -8,7 +8,7 @@ const PROJECTS = project_data;
 
 const ProjectMobile = () => {
   return (
-    <div className="md:hidden bg-neutral-900 text-center relative">
+    <div className="xl:hidden bg-neutral-900 text-center relative">
       <div className="sticky top-0 z-20 py-2">
         <p className="text-7xl font-fjalla-one "> PROJECT</p>
         <p className="font-space-grotesk mt-5">
@@ -45,7 +45,7 @@ const SectionMobile = ({
 }) => {
 
   return (
-    <div className={`h-dvh sticky top-40 font-space-grotesk`}>
+    <div className={`h-dvh sticky top-48 font-space-grotesk`}>
       <div
         id="project-container"
         className={`${className} h-[78%] rounded-lg py-2 px-2 relative`}
