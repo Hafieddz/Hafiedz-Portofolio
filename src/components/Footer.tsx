@@ -6,7 +6,7 @@ import Instagram from "./svgs/Instagram";
 import Github from "./svgs/Github";
 import Linkedin from "./svgs/Linkedin";
 import Gmail from "./svgs/Gmail";
-import { href, redirect } from "react-router";
+
 
 const Footer = () => {
   const container = useRef(null);
