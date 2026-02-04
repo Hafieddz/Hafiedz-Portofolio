@@ -57,19 +57,7 @@ const Overview = () => {
       >
         <p className="text-2xl md:text-4xl font-semibold"> About Me </p>
         <p className="text-sm md:text-base">
-          {" "}
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur
-          reiciendis nostrum alias voluptate natus quis, amet, sit provident
-          quibusdam velit totam ullam! Nobis harum iure odio voluptate voluptas
-          soluta sapiente error molestiae reiciendis consequatur facere iste
-          pariatur, ex doloribus ad cumque necessitatibus temporibus. Asperiores
-          maxime omnis quae eos pariatur obcaecati voluptatum ut deleniti soluta
-          ipsam suscipit quos sit ex id cum voluptates, laudantium rerum
-          exercitationem eligendi animi consequatur placeat? Quibusdam nemo
-          alias expedita aliquid magni, eaque sequi sit temporibus, blanditiis
-          dignissimos odio. Consectetur amet sit provident laboriosam,
-          consequuntur animi quaerat id temporibus. Explicabo perferendis
-          dolorum praesentium numquam quod, eveniet laborum?
+          i'm a Fullstack Web Developer with experience in React, NextJS, Express, NestJS
         </p>
       </motion.div>
       <motion.p

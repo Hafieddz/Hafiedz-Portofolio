@@ -2,7 +2,7 @@ import Experience from "./components/Experience";
 import Hero from "./components/Hero";
 import Overview from "./components/Overview";
 import Project from "./components/Project";
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   return (
