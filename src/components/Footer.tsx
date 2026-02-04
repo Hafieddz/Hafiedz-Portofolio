@@ -1,10 +1,4 @@
-import {
-  LayoutGroup,
-  motion,
-  useMotionValueEvent,
-  useScroll,
-  useTransform,
-} from "motion/react";
+import { LayoutGroup, motion, useScroll, useTransform } from "motion/react";
 import LightRays from "./LightRays";
 import { useRef } from "react";
 
@@ -12,16 +6,13 @@ import Instagram from "./svgs/Instagram";
 import Github from "./svgs/Github";
 import Linkedin from "./svgs/Linkedin";
 import Gmail from "./svgs/Gmail";
+import { href, redirect } from "react-router";
 
 const Footer = () => {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start end", "end end"],
-  });
-
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    console.log(`footer : ${latest}`);
   });
 
   const opacity = useTransform(
@@ -32,7 +23,7 @@ const Footer = () => {
   return (
     <div
       ref={container}
-      className="h-screen bg-neutral-900 sticky top-0 flex justify-center items-center col-span-2"
+      className="h-screen bg-neutral-900 sticky top-0 flex justify-center items-center col-span-2 select-none "
     >
       <motion.div
         style={{
@@ -59,42 +50,46 @@ const Footer = () => {
           <p className="text-4xl md:text-7xl">Get in touch</p>
           <div className="flex gap-3 mt-5 justify-center items-center">
             <LayoutGroup>
-              <motion.div
+              <motion.a
                 layout
                 whileHover={{
                   scale: 1.2,
                 }}
+                href="https://www.instagram.com/hafieddz"
                 className="w-10 h-10 cursor-pointer"
               >
                 <Instagram />
-              </motion.div>
-              <motion.div
+              </motion.a>
+              <motion.a
                 layout
                 whileHover={{
                   scale: 1.2,
                 }}
+                href="https://github.com/Hafieddz"
                 className="w-8 h-10 cursor-pointer flex items-center justify-center"
               >
                 <Github />
-              </motion.div>
-              <motion.div
+              </motion.a>
+              <motion.a
                 layout
                 whileHover={{
                   scale: 1.2,
                 }}
+                href="https://www.linkedin.com/in/hafiedz-hasmy-hamid-717514297/"
                 className="w-8 h-10 cursor-pointer flex items-center justify-center"
               >
                 <Linkedin />
-              </motion.div>
-              <motion.div
+              </motion.a>
+              <motion.a
                 layout
                 whileHover={{
                   scale: 1.2,
                 }}
+                href="mailto:hasmy41@gmail.com"
                 className="w-10 h-10 cursor-pointer flex items-center justify-center"
               >
                 <Gmail />
-              </motion.div>
+              </motion.a>
             </LayoutGroup>
           </div>
         </div>

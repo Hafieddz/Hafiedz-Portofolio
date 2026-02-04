@@ -44,7 +44,10 @@ const Project = () => {
   );
   return (
     <>
-      <div ref={container} className="hidden xl:block relative font-space-grotesk">
+      <div
+        ref={container}
+        className="hidden xl:block relative font-space-grotesk"
+      >
         <div className="grid grid-cols-2 relative">
           {/* Left */}
           <div className="bg-neutral-900 h-screen sticky top-0 pt-10 ">
@@ -55,8 +58,8 @@ const Project = () => {
               </p>
               <div className="absolute bottom-0 right-20 text-[300px] p-0 m-0 overflow-hidden ">
                 <div className="flex gap-5 opacity-30 text-transparent [-webkit-text-stroke:4px_white]">
-                  <p className="w-47.5">0</p>
-                  <div className="w-47 relative">
+                  <p className="w-47.5 select-none">0</p>
+                  <div className="w-47 relative select-none">
                     <motion.div
                       className="absolute"
                       style={{
@@ -64,7 +67,9 @@ const Project = () => {
                       }}
                     >
                       {project_data.map((_, idx) => (
-                        <p key={`pn_${idx}`}>{idx + 1}</p>
+                        <p className="select-none" key={`pn_${idx}`}>
+                          {idx + 1}
+                        </p>
                       ))}
                     </motion.div>
                   </div>
@@ -142,7 +147,7 @@ const Section = ({ className, style, index, projectData }: SectionProps) => {
                 const [isHovered, setIsHovered] = useState(false);
 
                 return (
-                  <div className="relative w-fit">
+                  <div key={`pd-${idx}`} className="relative w-fit">
                     <motion.img
                       onHoverStart={() => setIsHovered(true)}
                       onHoverEnd={() => setIsHovered(false)}

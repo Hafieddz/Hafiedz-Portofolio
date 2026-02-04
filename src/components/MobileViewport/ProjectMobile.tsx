@@ -43,7 +43,6 @@ const SectionMobile = ({
   className: string;
   data?: project_data_type;
 }) => {
-
   return (
     <div className={`h-dvh sticky top-48 font-space-grotesk`}>
       <div
@@ -59,7 +58,7 @@ const SectionMobile = ({
             data.stackSrc.map((imgSrc, idx: number) => {
               const [isHovered, setIsHovered] = useState(false);
               return (
-                <div className="relative w-fit z-0">
+                <div key={`pdm-${idx}`} className="relative w-fit z-0">
                   <motion.img
                     onHoverStart={() => setIsHovered(true)}
                     onHoverEnd={() => setIsHovered(false)}

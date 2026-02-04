@@ -10,8 +10,6 @@ interface PreviewProjectProps {
 const PreviewProject = ({ name, imgSrc }: PreviewProjectProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log(name, imgSrc);
-
   return (
     <div className="absolute bottom-3 sm:bottom-30 md:bottom-40 w-[97%] h-[8%] left-1/2 -translate-x-1/2 rounded-t-lg z-10">
       <motion.div

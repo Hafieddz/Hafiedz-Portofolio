@@ -57,14 +57,18 @@ const Overview = () => {
       >
         <p className="text-2xl md:text-4xl font-semibold"> About Me </p>
         <p className="text-sm md:text-base">
-          i'm a Fullstack Web Developer with experience in React, NextJS, Express, NestJS
+          I'm a full-stack web developer who recently graduated from Information
+          Systems with a passion for turning ideas into functional web
+          applications. Experienced in using React, Next.js, and Express. Always
+          enthusiastic about learning new technologies to enhance my development
+          skills.
         </p>
       </motion.div>
       <motion.p
         style={{
           x,
         }}
-        className="text-[400px] md:text-[600px] absolute -z-50 font-light opacity-40 text-transparent [-webkit-text-stroke:3px_black] "
+        className="select-none text-[400px] md:text-[600px] absolute -z-50 font-light opacity-25 text-transparent [-webkit-text-stroke:2px_black] "
       >
         ABOUT
       </motion.p>
